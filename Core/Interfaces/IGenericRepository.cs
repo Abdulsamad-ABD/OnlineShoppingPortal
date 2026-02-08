@@ -7,7 +7,7 @@ public interface IGenericRepository<T> where T : BaseEntity
     Task<IReadOnlyList<T>> ListAllAsync();
     Task<T?> GetByIdAsync(int id);
     Task<T?> GetEntityBySpec(ISpecification<T> spec);
-    Task<IReadOnlyList<T?>> ListAsync(ISpecification<T> spec);
+    Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec);
     Task<TResult?> GetEntityBySpec<TResult>(ISpecification<T,TResult> spec);
     Task<IReadOnlyList<TResult>> ListAsync<TResult>(ISpecification<T,TResult> spec);
     void Update(T entity);
@@ -15,4 +15,5 @@ public interface IGenericRepository<T> where T : BaseEntity
     void Remove(T entity);
     Task<bool> SaveAllAsync();
     Task<bool> ExistsAsync(int id);
+    Task<int> CountAsync(ISpecification<T> spec);
 } 

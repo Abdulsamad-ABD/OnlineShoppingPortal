@@ -8,6 +8,10 @@ public interface ISpecification<T>
     Expression<Func<T,Object>>? OrderBy {get;}
     Expression<Func<T,object>>? OrderByDescending {get;}
     bool IsDistinct {get;}
+    int Skip {get;}
+    int Take {get;}
+    bool IsPageEnabled {get;}
+    IQueryable<T> ApplyCriteria(IQueryable<T> query);
 }
 
 public interface ISpecification<T,TResult> : ISpecification<T>
