@@ -74,14 +74,14 @@ public class ProductsController(IGenericRepository<Product> repo) : BaseApiContr
         return BadRequest("Problem in deleting Product");
     }
 
-    [HttpGet("Types")]
+    [HttpGet("types")]
     public async Task<ActionResult<IReadOnlyList<string>>> GetTypes()
     {
         var spec = new TypeListSpecification(); 
         return Ok(await repo.ListAsync(spec));
     }
 
-    [HttpGet("Brands")]
+    [HttpGet("brands")]
     public async Task<ActionResult<IReadOnlyList<string>>> GetBrands()
     {
         var spec = new BrandListSpecification();

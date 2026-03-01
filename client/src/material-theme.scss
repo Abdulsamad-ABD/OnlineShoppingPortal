@@ -16,6 +16,22 @@
   ));
 }
 
+.snack-error {
+  @include mat.snack-bar-overrides((
+    button-color: white,
+    container-color: red,
+    supporting-text-color: white
+  ));
+}
+
+.snack-status {
+  @include mat.snack-bar-overrides((
+    button-color: white,
+    container-color: green,
+    supporting-text-color: white
+  ));
+}
+
 .match-input-height {
   height: var(--mat-form-field-container-height) !important;
 }

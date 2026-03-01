@@ -1,17 +1,17 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ShopService } from '../../../core/services/shop.service';
-import { Product } from '../../../shared/models/products';
-import { ProductItemComponent } from "../product-item/product-item.component";
+import { ShopService } from '../../core/services/shop.service';
+import { Product } from '../../shared/models/products';
 import { MatAnchor, MatButton, MatIconButton } from "@angular/material/button";
 import { MatIcon } from "@angular/material/icon";
 import { MatDialog } from '@angular/material/dialog';
-import { FiltersDialogComponent } from '../filters-dialog/filters-dialog.component';
+import { FiltersDialogComponent } from './filters-dialog/filters-dialog.component';
 import { MatMenuTrigger, MatMenu } from '@angular/material/menu';
 import { MatListOption, MatSelectionList, MatSelectionListChange } from '@angular/material/list';
-import { ShopParams } from '../../../shared/models/shopParams';
-import { Pagination } from '../../../shared/models/pagination';
+import { ShopParams } from '../../shared/models/shopParams';
+import { Pagination } from '../../shared/models/pagination';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
+import { ProductItemComponent } from './product-item/product-item.component';
 
 @Component({
   selector: 'app-shop',

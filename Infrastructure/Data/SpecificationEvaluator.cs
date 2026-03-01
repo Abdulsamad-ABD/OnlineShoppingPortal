@@ -23,6 +23,11 @@ public class SpecificationEvaluator<T> where T : BaseEntity
         {
             query = query.Skip(spec.Skip).Take(spec.Take);
         }
+
+        if(spec.IsDistinct)
+        {
+            query = query.Distinct();
+        }
         return query;
     }
 
@@ -50,6 +55,11 @@ public class SpecificationEvaluator<T> where T : BaseEntity
         if(spec.IsPageEnabled)
         {
             SelectQuery = SelectQuery?.Skip(spec.Skip).Take(spec.Take);
+        }
+
+        if(spec.IsDistinct)
+        {
+            SelectQuery = SelectQuery?.Distinct();
         }
         
         return SelectQuery ?? query.Cast<TResult>();
